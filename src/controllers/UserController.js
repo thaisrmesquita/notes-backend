@@ -23,6 +23,19 @@ class UserController {
         }
     }
 
+    async update(req,res) {
+        const {user_id} = req.params;
+        const { name, email, password } = req.body;
+        
+       const user = await User.updateOne( {_id:user_id},{
+            name,
+            email,
+            password
+        });
+
+        return res.json(`${user_id} - ${name} - ${email} - ${password}`);
+    }
+
     async destroy(req,res) {
         const { user_id } = req.body;
 
