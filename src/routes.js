@@ -14,6 +14,7 @@ routes.delete('/user/delete', UserController.destroy);
 routes.post('/sessions', SessionController.store);
 
 routes.post('/notes', NoteController.store);
+routes.put('/notes/:note_id', NoteController.update);
 
 routes.get('/dashboard', DashboardController.show);
 
